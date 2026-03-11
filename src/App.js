@@ -21,8 +21,7 @@ const TwitterIcon   = () => <Icon size={16} paths={<><path d="M4 4l16 16M4 20 20
 const FacebookIcon  = () => <Icon size={16} paths={<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>} />;
 const LinkedInIcon  = () => <Icon size={16} paths={<><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></>} />;
 const YouTubeIcon   = () => <Icon size={16} paths={<><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></>} />;
-const TrophyIcon    = ({ size=48 }) => <Icon size={size} paths={<><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></>} />;
-const StarIcon      = ({ size=48 }) => <Icon size={size} paths={<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>} />;
+
 const BulbIcon      = () => <Icon size={24} paths={<><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></>} />;
 const HandshakeIcon = () => <Icon size={24} paths={<path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/>} />;
 const CompeteIcon   = () => <Icon size={24} paths={<><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="18" width="12" height="4"/></>} />;
@@ -45,15 +44,23 @@ const NONTECH_EVENTS = [
   { id:'vr-valley', color:'rose', icon:<VRIcon />, title:'VR Valley', type:'Individual', venue:'212CM', desc:'VR gaming and simulation experience for participants. Immerse yourself in virtual worlds and compete for glory.', fullDesc:'Step into the future with VR gaming and simulation experiences. Participants get to immerse themselves in cutting-edge virtual environments, compete in VR challenges, and experience the next frontier of technology firsthand.', requirements:'VR setup rental, VR games', coords:[{name:'Tanush Kumar',roll:'23B81A66B9',phone:'7032082075'},{name:'N Deepika',roll:'23B81A05HQ',phone:'6301986304'}] },
 ];
 
-const TEAM = [
-  {initials:'KR',name:'Kavya Reddy',role:'Fest Director',dept:'CSE Final Year',grad:'linear-gradient(135deg,#00f5c8,#00c9a7)'},
-  {initials:'AS',name:'Arjun Sharma',role:'Technical Head',dept:'ECE Final Year',grad:'linear-gradient(135deg,#ff4d6d,#e91e63)'},
-  {initials:'PM',name:'Priya Mehta',role:'Cultural Head',dept:'IT Final Year',grad:'linear-gradient(135deg,#ffd60a,#ff9800)'},
-  {initials:'RK',name:'Rahul Kumar',role:'Marketing Lead',dept:'MBA 2nd Year',grad:'linear-gradient(135deg,#a78bfa,#7c3aed)'},
-  {initials:'SN',name:'Sneha Nair',role:'Design Lead',dept:'CSE 3rd Year',grad:'linear-gradient(135deg,#60a5fa,#3b82f6)'},
-  {initials:'VT',name:'Vikram Teja',role:'Logistics Head',dept:'MECH Final Year',grad:'linear-gradient(135deg,#4ade80,#22c55e)'},
-  {initials:'DR',name:'Divya Rao',role:'Sponsorship Lead',dept:'ECE 3rd Year',grad:'linear-gradient(135deg,#fb923c,#f97316)'},
-  {initials:'MA',name:'Mohammed Ali',role:'Tech Events Coord',dept:'CSE 3rd Year',grad:'linear-gradient(135deg,#38bdf8,#06b6d4)'},
+const CONVENORS = [
+  { name:'Dr. H.N. Lakshmi',  role:'Assoc. Dean, ET',           photo:'/dr-lakshmi.jpg' },
+  { name:'Dr. R. Usha Rani',  role:'Prof & Head CSE (AI&ML)',   photo:'/dr-usha-rani.jpg' },
+];
+
+const FACULTY_ADVISORS = [
+  { name:'Kandle Navaneetha',       role:'Assistant Professor',          photo:'/navaneetha.jpg' },
+  { name:'Dr. M. Surya Bhupal Rao', role:'Associate Professor',          photo:'/suryabhopal.jpg' },
+  { name:'Dr. Y. Alekya Rani',      role:'Associate Professor, CSE-AI&ML', photo:'/alekhya.jpg' },
+  { name:'Farhana Bano',            role:'Sr. Assistant Professor',      photo:'/farhana-bano.jpg' },
+];
+
+const ORGANIZERS = [
+  { name:'T. Rohan Reddy',         role:'President',      photo:'/rohan-reddy.jpg',    grad:'linear-gradient(135deg,#00f5c8,#7ef542)' },
+  { name:'Manikanta Paka',         role:'Vice President',  photo:'/manikanta-paka.jpg', grad:'linear-gradient(135deg,#ff4d6d,#fb923c)' },
+  { name:'Kamalla Varsha',         role:'Secretary',       photo:'/kamalla-varsha.jpg', grad:'linear-gradient(135deg,#a78bfa,#60a5fa)' },
+  { name:'CH. Sri Harsha Vardhan', role:'Treasurer',       photo:'/sri-harsha.jpg',     grad:'linear-gradient(135deg,#ffd60a,#ff9800)' },
 ];
 
 function useCountdown(target) {
@@ -289,58 +296,103 @@ export default function App() {
         </div>
       </section>
 
-      {/* PRIZES */}
-      <section id="prizes">
-        <div className="container">
-          <div className="section-header reveal">
-            <p className="section-tag">// Prize Pool</p>
-            <h2 className="section-title">Win Big,<br/>Dream Bigger</h2>
-            <p className="section-subtitle">Compete for one of the most generous prize pools in South Indian college fest history.</p>
-            <div className="divider"/>
-          </div>
-          <div className="prize-pool-banner reveal">
-            <p className="pool-label">Total Prize Pool</p>
-            <h3>₹10,85,000+</h3>
-            <p>Across 25+ events — Technical, Cultural, and Special Recognition Awards</p>
-          </div>
-          <div className="prizes-grid reveal">
-            {[
-              {cls:'gold',    rank:'1st Place', name:'Grand Champion',  amount:'₹1,50,000', desc:'Hackathon First Prize — plus internship opportunities with partner companies and incubation support.', icon:<TrophyIcon/>},
-              {cls:'silver',  rank:'2nd Place', name:'Silver Award',    amount:'₹75,000',   desc:'Hackathon Second Prize — plus mentorship sessions with industry leaders and resources for startup launch.', icon:<TrophyIcon/>},
-              {cls:'bronze',  rank:'3rd Place', name:'Bronze Award',    amount:'₹50,000',   desc:'Hackathon Third Prize — plus recognition from industry and academic partners.', icon:<TrophyIcon/>},
-              {cls:'special', rank:'Special',   name:'Best Innovation', amount:'₹25,000',   desc:'For the most innovative and impactful solution across all technical events — judged by industry panel.', icon:<StarIcon/>},
-            ].map((p,i) => (
-              <div key={i} className={`prize-card ${p.cls}`}>
-                <div className="prize-trophy">{p.icon}</div>
-                <div className="prize-rank">{p.rank}</div>
-                <div className="prize-name">{p.name}</div>
-                <div className="prize-amount">{p.amount}</div>
-                <p className="prize-desc">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* TEAM */}
       <section id="team">
         <div className="container">
           <div className="section-header reveal">
-            <p className="section-tag">// Organizing Team</p>
+            <p className="section-tag">// The People Behind the Fest</p>
             <h2 className="section-title">The Minds Behind<br/>arthaAIda '26</h2>
-            <p className="section-subtitle">A passionate, dedicated team of students working tirelessly to make this fest unforgettable.</p>
+            <p className="section-subtitle">Led by distinguished faculty and driven by passionate student leaders.</p>
             <div className="divider"/>
           </div>
-          <div className="team-grid reveal">
-            {TEAM.map((m,i) => (
-              <div key={i} className="team-card">
-                <div className="team-avatar" style={{background:m.grad}}>{m.initials}</div>
-                <div className="team-name">{m.name}</div>
-                <div className="team-role">{m.role}</div>
-                <div className="team-dept">{m.dept}</div>
-              </div>
-            ))}
+
+          {/* CONVENORS */}
+          <div className="team-block">
+            <div className="team-section-heading">
+              <div className="team-section-line"/>
+              <span>Convenors</span>
+              <div className="team-section-line"/>
+            </div>
+            <div className="convenor-grid">
+              {CONVENORS.map((c,i) => (
+                <div key={i} className="person-card">
+                  <div className="person-photo-area">
+                    <img src={c.photo} alt={c.name}
+                      onError={e=>{ e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}
+                    />
+                    <div className="person-photo-fallback" style={{display:'none'}}>
+                      {c.name.split(' ').map(w=>w[0]).slice(0,2).join('')}
+                    </div>
+                    <div className="person-role-badge">Convenor</div>
+                    <div className="person-accent-dot"/>
+                  </div>
+                  <div className="person-info">
+                    <div className="person-name">{c.name}</div>
+                    <div className="person-dept">{c.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* FACULTY ADVISORS */}
+          <div className="team-block">
+            <div className="team-section-heading">
+              <div className="team-section-line"/>
+              <span>Faculty Advisors</span>
+              <div className="team-section-line"/>
+            </div>
+            <div className="organizer-grid">
+              {FACULTY_ADVISORS.map((f,i) => (
+                <div key={i} className="person-card">
+                  <div className="person-photo-area">
+                    <img src={f.photo} alt={f.name}
+                      onError={e=>{ e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}
+                    />
+                    <div className="person-photo-fallback" style={{display:'none'}}>
+                      {f.name.split(' ').map(w=>w[0]).slice(0,2).join('')}
+                    </div>
+                    <div className="person-role-badge">Faculty</div>
+                    <div className="person-accent-dot"/>
+                  </div>
+                  <div className="person-info">
+                    <div className="person-name">{f.name}</div>
+                    <div className="person-dept">{f.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ORGANIZERS */}
+          <div className="team-block">
+            <div className="team-section-heading">
+              <div className="team-section-line"/>
+              <span>Student Organizers</span>
+              <div className="team-section-line"/>
+            </div>
+            <div className="organizer-grid">
+              {ORGANIZERS.map((o,i) => (
+                <div key={i} className="person-card">
+                  <div className="person-photo-area">
+                    <img src={o.photo} alt={o.name}
+                      onError={e=>{ e.target.style.display='none'; e.target.nextElementSibling.style.display='flex'; }}
+                    />
+                    <div className="person-photo-fallback" style={{display:'none',background:o.grad}}>
+                      {o.name.split(' ').map(w=>w[0]).slice(0,2).join('')}
+                    </div>
+                    <div className="person-role-badge">{o.role}</div>
+                    <div className="person-accent-dot"/>
+                  </div>
+                  <div className="person-info">
+                    <div className="person-name">{o.name}</div>
+                    <div className="person-dept">{o.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -357,8 +409,8 @@ export default function App() {
             <div className="contact-info">
               <h3>Let's Connect</h3>
               {[
-                {icon:<MailIcon/>, title:'Email Us', content:<><a href="mailto:arthaAIda2026@cvr.ac.in">arthaAIda2026@cvr.ac.in</a><br/><a href="mailto:tech.arthaAIda@cvr.ac.in">tech.arthaAIda@cvr.ac.in</a></>},
-                {icon:<PhoneIcon/>, title:'Call Us', content:<><p>+91 98765 43210 (Kavya — Fest Director)</p><p>+91 87654 32109 (Arjun — Tech Head)</p></>},
+                {icon:<MailIcon/>, title:'Email Us', content:<><a href="mailto:arthaaida2@gmail.com">arthaaida2@gmail.com</a></>},
+                {icon:<PhoneIcon/>, title:'Call Us', content:<><p>Manikanta Paka — +91 97014 38139</p><p>T. Rohan Reddy — +91 78935 89907</p></>},
                 {icon:<PinIcon/>, title:'Venue', content:<p>CVR College of Engineering<br/>Vastunagar, Mangalpalli (V), Ibrahimpatnam (M)<br/>Rangareddy District, Telangana — 501 510</p>},
                 {icon:<ClockIcon/>, title:'Dates', content:<p>March 13–15, 2026<br/>Registration Deadline: March 10, 2026</p>},
               ].map((item,i) => (
@@ -374,12 +426,15 @@ export default function App() {
               </div>
             </div>
             <div className="map-container">
-              <div className="map-placeholder map-pin-anim"><PinIcon size={48}/></div>
-              <div className="map-text">
-                <strong>CVR College of Engineering</strong><br/>
-                Vastunagar, Mangalpalli (V), Ibrahimpatnam (M)<br/>
-                Rangareddy District, Telangana — 501 510<br/>
-                <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="map-link">Open in Google Maps →</a>
+              <div className="map-bg-img"/>
+              <div className="map-content">
+                <div className="map-pin-icon"><PinIcon size={44}/></div>
+                <div className="map-text">
+                  <strong>CVR College of Engineering</strong><br/>
+                  Vastunagar, Mangalpalli (V), Ibrahimpatnam (M)<br/>
+                  Rangareddy District, Telangana — 501 510
+                </div>
+                <a href="https://maps.google.com/?q=CVR+College+of+Engineering+Ibrahimpatnam" target="_blank" rel="noreferrer" className="map-link">Open in Google Maps →</a>
               </div>
             </div>
           </div>
@@ -396,7 +451,7 @@ export default function App() {
             </div>
             {[
               {title:'Events', links:[['#tech-events','Hackathon'],['#tech-events','Coding Contest'],['#nontech-events','Talent Show'],['#nontech-events','Gaming']]},
-              {title:'Info',   links:[['#about','About'],['#prizes','Prizes'],['#team','Team'],['#contact','Contact']]},
+              {title:'Info',   links:[['#about','About'],['#team','Team'],['#contact','Contact']]},
               {title:'Connect',links:[['#','Instagram'],['#','Twitter/X'],['#','LinkedIn'],['#','YouTube']]},
             ].map(col => (
               <div key={col.title} className="footer-col">
