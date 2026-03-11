@@ -324,7 +324,6 @@ export default function App() {
                       {c.name.split(' ').map(w=>w[0]).slice(0,2).join('')}
                     </div>
                     <div className="person-role-badge">Convenor</div>
-                    <div className="person-accent-dot"/>
                   </div>
                   <div className="person-info">
                     <div className="person-name">{c.name}</div>
@@ -353,7 +352,6 @@ export default function App() {
                       {f.name.split(' ').map(w=>w[0]).slice(0,2).join('')}
                     </div>
                     <div className="person-role-badge">Faculty</div>
-                    <div className="person-accent-dot"/>
                   </div>
                   <div className="person-info">
                     <div className="person-name">{f.name}</div>
@@ -382,7 +380,6 @@ export default function App() {
                       {o.name.split(' ').map(w=>w[0]).slice(0,2).join('')}
                     </div>
                     <div className="person-role-badge">{o.role}</div>
-                    <div className="person-accent-dot"/>
                   </div>
                   <div className="person-info">
                     <div className="person-name">{o.name}</div>
@@ -419,11 +416,7 @@ export default function App() {
                   <div className="contact-detail"><h4>{item.title}</h4>{item.content}</div>
                 </div>
               ))}
-              <div className="social-links">
-                {[[<InstagramIcon/>,'Instagram'],[<TwitterIcon/>,'Twitter/X'],[<FacebookIcon/>,'Facebook'],[<LinkedInIcon/>,'LinkedIn'],[<YouTubeIcon/>,'YouTube']].map(([icon,label]) => (
-                  <a key={label} href="#" className="social-btn">{icon} {label}</a>
-                ))}
-              </div>
+
             </div>
             <div className="map-container">
               <div className="map-bg-img"/>
@@ -450,9 +443,9 @@ export default function App() {
               <p>The annual techno-cultural festival of CVR College of Engineering, Hyderabad. Where intelligence meets innovation — every year.</p>
             </div>
             {[
-              {title:'Events', links:[['#tech-events','Hackathon'],['#tech-events','Coding Contest'],['#nontech-events','Talent Show'],['#nontech-events','Gaming']]},
+              {title:'Events', links:[['#tech-events','Technical'],['#nontech-events','Non-Technical']]},
               {title:'Info',   links:[['#about','About'],['#team','Team'],['#contact','Contact']]},
-              {title:'Connect',links:[['#','Instagram'],['#','Twitter/X'],['#','LinkedIn'],['#','YouTube']]},
+
             ].map(col => (
               <div key={col.title} className="footer-col">
                 <h4>{col.title}</h4>
@@ -462,9 +455,7 @@ export default function App() {
           </div>
           <div className="footer-bottom">
             <p className="footer-copy">© 2026 <span>arthaAIda</span> · CVR College of Engineering, Hyderabad. All rights reserved.</p>
-            <div className="footer-social">
-              {[<InstagramIcon/>,<TwitterIcon/>,<FacebookIcon/>,<LinkedInIcon/>].map((icon,i) => <a key={i} href="#">{icon}</a>)}
-            </div>
+
           </div>
         </div>
       </footer>
